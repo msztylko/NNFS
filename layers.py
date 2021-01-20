@@ -22,3 +22,14 @@ class Activation_Softmax:
         probabilities = exp_values / np.sum(exp_values, axis=1, keepdims=True)
 
         self.output = probabilities
+
+class Loss:
+
+    def calculate(self, output, y):
+        # Calculate sample loss
+        sample_losses = self.forward(output, y)
+
+        # Calculate mean loss
+        data_loss = np.mean(sample_losses)
+
+        return data_loss

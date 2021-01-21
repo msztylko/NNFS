@@ -1,4 +1,7 @@
 import numpy as np
+import nnfs
+from nnfs.datasets import spiral_data
+nnfs.init()
 
 class Layer_Dense:
 
@@ -34,7 +37,7 @@ class Loss:
 
         return data_loss
 
-class Loss_CategoricalCrossEntropy(Loss):
+class Loss_CategoricalCrossentropy(Loss):
     
     def forward(self, y_pred, y_true):
 
